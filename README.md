@@ -10,17 +10,20 @@
 Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
 
 1. Install Laravel 9 using composer. Open your terminal and run the following command:
+
     ```bash
     composer create-project laravel/laravel myproject "9.*"
     ```
 
 2. Navigate to the project directory and install the Laravel UI package:
+
     ```bash
     cd myproject
     composer require laravel/ui
     ```
 
 3. Generate the authentication scaffolding using Laravel UI:
+
     ```bash
     php artisan ui vue --auth
     ```
@@ -34,6 +37,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 6. Create a vite.config.js file in the project root directory:
+
     ```javascript
     const path = require('path');
 
@@ -55,6 +59,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     This configuration tells Vite to use the resources directory as the root, output to the public directory, and use Rollup to build the JavaScript files.
 
 7. Update the package.json file to include the following scripts:
+
     ```json
     "scripts": {
         "dev": "vite",
@@ -70,6 +75,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 9. Create a Vue component that will serve as the main application layout. Create a new file AppLayout.vue in the resources/js/Layouts directory:
+
     ```html
     <template>
     <div>
@@ -89,6 +95,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 10. Create a Vue component for the welcome page. Create a new file Welcome.vue in the resources/js/Pages directory:
+
     ```html
     <template>
     <app-layout>
@@ -101,6 +108,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 11. Update the app.js file in the resources/js directory to use Inertia.js and register the Vue components:
+
     ```javascript
     import { createApp, h } from 'vue';
     import { createInertiaApp } from '@inertiajs/inertia-vue3';
@@ -118,6 +126,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 12. Update the routes/web.php file to use Inertia.js and the Welcome Vue component:
+
     ```php
     use App\Http\Controllers\HomeController;
     use Inertia\Inertia;
@@ -128,6 +137,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 13. Update the app.blade.php file in the resources/views/layouts directory to use the Inertia.js script and links:
+
     ```html
     <!DOCTYPE html>
     <html>
@@ -146,6 +156,7 @@ Here are the steps to set up a Laravel 9 project with Vite and Inertia.js:
     ```
 
 14. Run Vite in development mode:
+
     ```bash
     npm run dev
     ```
